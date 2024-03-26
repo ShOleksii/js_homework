@@ -7,8 +7,8 @@
 // console.log(first1);   //Concatenation
 // var first2 = null + 3 
 // console.log(first2);   //nall is void, void plus number will be a number
-var first3 = 5 && "qwerty"
-console.log(first3);  
+// var first3 = "qwerty" && 5 // the last value is displayed
+// console.log(first3);  
 // var first4 = +'40' + +'2' + "hillel";
 // console.log(first4); // since the actions are consecutive, first there was an addition, then the number merged with the string
 // var first5 = '10' - 5 === 6; 
@@ -37,7 +37,7 @@ console.log(first3);
 // console.log(first16);  // 0 is less than 1
 var first17 = false && true || true
 console.log(first17);
-var first18 = false && (false || true);
+var first18 = false && (false || true); 
 console.log(first18);
-var first19 = (+null == false) < 1 ** 5;
-console.log(first19);
+// var first19 = (+null == false) < 1 ** 5;
+// console.log(first19);// true is less than one, so false
