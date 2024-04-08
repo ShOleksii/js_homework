@@ -45,6 +45,6 @@ if (!isNaN(result.age) && result.age >= 0) {
 
 
 
-замість promt можна було б виокристати наприклад readline
+// замість promt можна було б виокристати наприклад readline
 
-https://www.npmjs.com/package/readline
+// https://www.npmjs.com/package/readline
