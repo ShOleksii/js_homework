@@ -20,10 +20,11 @@ var prompt = require('prompt');
 prompt.start();
 prompt.get(['age'], function (err, result){
 // Отримання року від користувача
+// замість promt можна було б виокристати наприклад readline https://www.npmjs.com/package/readline
 
 // Перевірка, що введене значення є числом та не є від'ємним
 if (!isNaN(result.age) && result.age >= 0) {
-   //!isNaN - має перевірити чи вік не відємний, і число
+   //!isNaN - має перевірити чи вік не відємний, і число  можна було зробити перевірку так !isNaN(year) && year > 0
     var res;
     if (result.age === 1) {
       res = "рік";
@@ -41,3 +42,9 @@ if (!isNaN(result.age) && result.age >= 0) {
     console.log("Будь ласка, введіть число і не від'ємне.");
 }}
 );
+
+
+
+замість promt можна було б виокристати наприклад readline
+
+https://www.npmjs.com/package/readline
