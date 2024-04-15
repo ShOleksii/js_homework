@@ -58,14 +58,14 @@ for (let i = 1; i <= height; i++) {
 
 // 2 - ДЗ 
 
-let total = 0;
-for (let i = 1; i <= 100; i++) {
-    if (i % 3 !== 0) {
-        total += i;
-    }
-}
+// let total = 0;
+// for (let i = 1; i <= 100; i++) {
+//     if (i % 3 !== 0) {
+//         total += i;
+//     }
+// }
 
-console.log( total);
+// console.log( total);
 
 
 
@@ -83,12 +83,13 @@ console.log( total);
 
 //  дз - 3
 
-function pow(x, y) {
-    return Math.pow(x, y);
-  }
-  var x = 7;
-  var y = 3;
- var result = pow(x, y);
-  console.log(result); 
-  
 
+//   function pow(x, y) {
+//     let res = 1;
+//     for (let i = 0; i < y; i++) {
+//         res *= x;
+//     }
+//     return res;
+// }
+
+// console.log(pow(2, 3)); // Виведе 8
