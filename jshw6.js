@@ -32,13 +32,13 @@
 // var height = 5;
 
 
-for (let i = 1; i <= height; i++) {
-    let row = '';
-    for (let j = 1; j <= i; j++) {
-        row += '* ';
-    }
-    console.log(row);
-}
+// for (let i = 1; i <= height; i++) {
+//     let row = '';
+//     for (let j = 1; j <= i; j++) {
+//         row += '* ';
+//     }
+//     console.log(row);
+// }
 
 
 
@@ -84,12 +84,12 @@ for (let i = 1; i <= height; i++) {
 //  дз - 3
 
 
-//   function pow(x, y) {
-//     let res = 1;
-//     for (let i = 0; i < y; i++) {
-//         res *= x;
-//     }
-//     return res;
-// }
+  function pow(x, y) {
+    let res = 1;
+    for (let i = 0; i < y; i++) {
+        res *= x;
+    }
+    return res;
+}
 
-// console.log(pow(2, 3)); // Виведе 8
+console.log(pow(1, 1));
