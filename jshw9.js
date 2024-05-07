@@ -3,21 +3,21 @@
 // Приклад масиву: arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]; 
 // Напишіть функцію myBlend(arr), яка перемішуватиме переданий їй масив. Зверніть увагу: не створювати новий масив, вже перемішаний, а саме перемішувати той, який їй передали.
 
-// function myBlend(arr) {
-//     // Проходимо по кожному елементу масиву
-//     for (let i = arr.length - 1; i > 0; i--) 
-//     {
-//         const j = Math.floor(Math.random() * (i + 1));
+function myBlend(arr) {
+    // Проходимо по кожному елементу масиву
+    for (let i = arr.length - 1; i > 0; i--) 
+    {
+        const j = Math.floor(Math.random() * (i + 1));
 
-//         [arr[i], arr[j]] = [arr[j], arr[i]];
-//     }
-// }
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+}
 
-// let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-// myBlend(arr);
+myBlend(arr);
 
-// console.log(arr);
+console.log(arr);
 
 
 
