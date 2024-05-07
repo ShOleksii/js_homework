@@ -3,21 +3,21 @@
 // Приклад масиву: arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]; 
 // Напишіть функцію myBlend(arr), яка перемішуватиме переданий їй масив. Зверніть увагу: не створювати новий масив, вже перемішаний, а саме перемішувати той, який їй передали.
 
-function myBlend(arr) {
-    // Проходимо по кожному елементу масиву
-    for (let i = arr.length - 1; i > 0; i--) 
-    {
-        const j = Math.floor(Math.random() * (i + 1));
+// function myBlend(arr) {
+//     // Проходимо по кожному елементу масиву
+//     for (let i = arr.length - 1; i > 0; i--) 
+//     {
+//         const j = Math.floor(Math.random() * (i + 1));
 
-        [arr[i], arr[j]] = [arr[j], arr[i]];
-    }
-}
+//         [arr[i], arr[j]] = [arr[j], arr[i]];
+//     }
+// }
 
-let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+// let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-myBlend(arr);
+// myBlend(arr);
 
-console.log(arr);
+// console.log(arr);
 
 
 
@@ -29,3 +29,26 @@ console.log(arr);
 
 // Ось приклад об'єкту, зверніть увагу на вкладеність, та маєте на увазі що об'єкт може ставати ще глибшим. 
 // Вам необхідно написати функцію findValueByKey(companyName), яка буде приймати значення у вигляді companyName та надавати інформацію про цю subCompany.
+
+
+
+function findValueByKey(companyName, companies) {
+    for (let company of companies) {
+        // Перевіряємо, чи головна компанія має відповідну назву
+        if (company.name === companyName) {
+            return company;
+        }
+        // Якщо клієнт має підкомпанії, рекурсивно шукаємо серед них
+        if (company.clients) {
+            let subCompany = findValueByKey(companyName, company.clients);
+            if (subCompany) {
+                return subCompany;
+            }
+        }
+    }
+    // Якщо не знайдено, повертаємо null
+    return null;
+}
+
+// Приклад використання
+console.log(findValueByKey('Клієнт 1.2.3', company.clients));
