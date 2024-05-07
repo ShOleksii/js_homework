@@ -49,6 +49,5 @@ function findValueByKey(companyName, companies) {
     // Якщо не знайдено, повертаємо null
     return null;
 }
-
 // Приклад використання
 console.log(findValueByKey('Клієнт 1.2.3', company.clients));
