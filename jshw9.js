@@ -32,22 +32,63 @@
 
 
 
-function findValueByKey(companyName, companies) {
-    for (let company of companies) {
-        // Перевіряємо, чи головна компанія має відповідну назву
-        if (company.name === companyName) {
-            return company;
+const company = {
+    name: 'Велика Компанія',
+    type: 'Головна компанія',
+    platform: 'Платформа для продажу квитків',
+    sellsSolution: 'Рішення для продажу квитків',
+    clients: [
+        {
+            name: 'Клієнт 1',
+            type: 'subCompany',
+            uses: 'ПО для продажу квитків',
+            sells: 'Рішення для продажу квитків',
+            partners: [
+                {
+                    name: 'Клієнт 1.1',
+                    type: 'subSubCompany',
+                    uses: 'Рішення для продажу квитків',
+                    sells: 'Рішення для продажу квитків',
+                },
+                {
+                    name: 'Клієнт 1.2',
+                    type: 'subSubCompany',
+                    uses: 'Рішення для продажу квитків',
+                    sells: 'Рішення для продажу квитків',
+                    partners: [
+                        {
+                            name: 'Клієнт 1.2.3',
+                            type: 'subSubCompany',
+                            uses: 'Рішення для продажу квитків',
+                            sells: 'Рішення для продажу квитків',
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            name: 'Клієнт 2',
+            type: 'subCompany',
+            uses: 'ПО для продажу квитків',
+            sells: 'Рішення для продажу квитків'
         }
-        // Якщо клієнт має підкомпанії, рекурсивно шукаємо серед них
-        if (company.clients) {
-            let subCompany = findValueByKey(companyName, company.clients);
-            if (subCompany) {
-                return subCompany;
-            }
+    ]
+};
+
+function findValueByKey(companyName, companies) {
+    const company = companies.find(company => company.name === companyName);
+    if (company) return company;
+    for (let comp of companies) {
+        if (comp.clients) {
+            const subCompany = findValueByKey(companyName, comp.clients);
+            if (subCompany) return subCompany;
+        }
+        if (comp.partners) {
+            const subCompany = findValueByKey(companyName, comp.partners);
+            if (subCompany) return subCompany;
         }
     }
-    // Якщо не знайдено, повертаємо null
     return null;
 }
-// Приклад використання
-console.log(findValueByKey('Клієнт 1.2.3', company.clients));
+
+console.log(findValueByKey('Клієнт 1.1', company.clients));
